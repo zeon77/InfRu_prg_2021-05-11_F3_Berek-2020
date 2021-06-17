@@ -38,6 +38,15 @@ namespace Bérek2020
             {
                 Console.WriteLine("6. feladat: A megadott részleg nem létezik a cégnél");
             }
+
+            //7.
+            Console.WriteLine("7. feladat: Statisztika");
+            dolgozok
+                .GroupBy(x => x.Részleg)
+                .Select(gr => new { Név = gr.Key, Létszám = gr.Count() })
+                .ToList()
+                .ForEach(x => Console.WriteLine($"\t {x.Név} - {x.Létszám} fő"));
+
         }
     }
 }
