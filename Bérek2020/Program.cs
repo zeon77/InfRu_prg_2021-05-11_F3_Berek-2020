@@ -16,6 +16,9 @@ namespace Bérek2020
             
             //3.
             Console.WriteLine($"3. feladat: Dolgozók száma: {dolgozok.Count} fő");
+
+            //4.
+            Console.WriteLine($"4. feladat: Bérek átlaga: {(dolgozok.Average(x => x.Bér) / 1000):0.0} eFt");
         }
     }
 }
