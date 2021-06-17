@@ -19,6 +19,25 @@ namespace Bérek2020
 
             //4.
             Console.WriteLine($"4. feladat: Bérek átlaga: {(dolgozok.Average(x => x.Bér) / 1000):0.0} eFt");
+
+            //5.
+            Console.Write("5. feladat: Kérem egy részleg nevét: ");
+            string részleg = Console.ReadLine();
+
+            //6.
+            if (dolgozok.Any(x => x.Részleg == részleg))
+            {
+                Dolgozó d = dolgozok.Where(x => x.Részleg == részleg).OrderBy(x => x.Bér).Last();
+                Console.WriteLine("6. feladat: A legtöbbet kereső dolgozó a megadott részlegen");
+                Console.WriteLine($"\t Név: {d.Név}");
+                Console.WriteLine($"\t Neme: {d.Nem}");
+                Console.WriteLine($"\t Belépés: {d.BelépésÉve}");
+                Console.WriteLine($"\t Bér: {d.Bér.ToString("# ##0")} Forint");
+            }
+            else
+            {
+                Console.WriteLine("6. feladat: A megadott részleg nem létezik a cégnél");
+            }
         }
     }
 }
